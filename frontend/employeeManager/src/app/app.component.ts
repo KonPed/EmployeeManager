@@ -7,15 +7,16 @@ import {Employee} from "./model/employee";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
-   employeesList: any;
+export class AppComponent implements OnInit {
+  employees: Employee[] = [];
 
   constructor(private employeeService: EmployeeService) {
+
   }
 
   ngOnInit() {
     this.employeeService.getAllEmployees().subscribe((employeesList: Employee[]) => {
-      this.employeesList = employeesList;
+      this.employees = employeesList;
     });
   }
 
