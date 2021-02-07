@@ -19,6 +19,11 @@ public class EmployeeController {
         return employeeService.findAllEmployees();
     }
 
+    @GetMapping(value = "/byName/{employeeName}", produces = "application/json")
+    public Employee getEmployeeByName(@PathVariable String employeeName) throws Throwable {
+        return employeeService.findEmployeeByName(employeeName);
+    }
+
     @PostMapping(value = "/add", consumes = "application/json", produces = "application/json")
     public Employee addEmployee(@RequestBody Employee employee) {
         return employeeService.addEmployee(employee);

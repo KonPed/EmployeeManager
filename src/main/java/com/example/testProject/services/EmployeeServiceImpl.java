@@ -1,5 +1,6 @@
 package com.example.testProject.services;
 
+import com.example.testProject.Exceptions.UserNotFoundException;
 import com.example.testProject.data.EmployeeRepository;
 import com.example.testProject.models.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,5 +22,10 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public List<Employee> findAllEmployees() {
         return employeeRepository.findAll();
+    }
+
+    @Override
+    public Employee findEmployeeByName(String employeeName) throws UserNotFoundException {
+        return employeeRepository.findEmployeeByName(employeeName).orElseThrow(() -> new UserNotFoundException("User with name " + employeeName + " was not found."));
     }
 }
