@@ -3,6 +3,7 @@ package com.example.testProject.controllers;
 import com.example.testProject.models.Employee;
 import com.example.testProject.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,8 +16,8 @@ public class EmployeeController {
     EmployeeService employeeService;
 
     @GetMapping(value = "/all", produces = "application/json")
-    public List<Employee> getEmployees() {
-        return employeeService.findAllEmployees();
+    public ResponseEntity<List<Employee>> getEmployees() {
+        return ResponseEntity.ok(employeeService.findAllEmployees());
     }
 
     @GetMapping(value = "/byName/{employeeName}", produces = "application/json")
