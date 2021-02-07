@@ -1,7 +1,7 @@
 package com.example.testProject.controllers;
 
-import com.example.testProject.data.EmployeeRepository;
-import com.example.testProject.model.Employee;
+import com.example.testProject.models.Employee;
+import com.example.testProject.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,15 +12,15 @@ import java.util.List;
 public class EmployeeController {
 
     @Autowired
-    EmployeeRepository employeeRepository;
+    EmployeeService employeeService;
 
     @GetMapping(value = "/all", produces = "application/json")
     public List<Employee> getEmployees() {
-        return employeeRepository.findAll();
+        return employeeService.findAll();
     }
 
     @PostMapping(value = "/add", consumes = "application/json", produces = "application/json")
     public Employee addEmployee(@RequestBody Employee employee) {
-        return  employeeRepository.saveAndFlush(employee);
+        return employeeService.save(employee);
     }
 }
