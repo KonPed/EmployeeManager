@@ -6,10 +6,10 @@ import {WebService} from "./web.service";
 })
 export class EmployeeService {
 
-  constructor(private httpService: WebService) { }
+  constructor(private webService: WebService) { }
 
   public getAllEmployees() {
-    return this.httpService.get("/employee/all");
+    return this.webService.get("/employee/all");
   }
 
 }
