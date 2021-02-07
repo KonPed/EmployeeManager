@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {EmployeeService} from "./services/employee.service";
 import {Employee} from "./model/employee";
+import {HttpErrorResponse} from "@angular/common/http";
 
 @Component({
   selector: 'app-root',
@@ -15,9 +16,14 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.employeeService.getAllEmployees().subscribe((employeesList: Employee[]) => {
-      this.employees = employeesList;
-    });
+    this.getEmployees();
   }
 
+  private getEmployees(): void {
+    this.employeeService.getAllEmployees().subscribe((employeesList: Employee[]) => {
+      this.employees = employeesList;
+    }, (error: HttpErrorResponse) => {
+      console.log(error.message);
+    });
+  }
 }
