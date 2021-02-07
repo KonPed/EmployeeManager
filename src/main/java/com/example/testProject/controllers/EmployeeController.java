@@ -16,11 +16,11 @@ public class EmployeeController {
 
     @GetMapping(value = "/all", produces = "application/json")
     public List<Employee> getEmployees() {
-        return employeeService.findAll();
+        return employeeService.findAllEmployees();
     }
 
     @PostMapping(value = "/add", consumes = "application/json", produces = "application/json")
     public Employee addEmployee(@RequestBody Employee employee) {
-        return employeeService.save(employee);
+        return employeeService.addEmployee(employee);
     }
 }
