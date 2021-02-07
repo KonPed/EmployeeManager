@@ -27,8 +27,7 @@ public class Employee implements Serializable {
     public Employee() {
     }
 
-    public Employee(Long id, String name, String last_name, String email, String job_title, String phone, String image_url, String employee_code) {
-        this.id = id;
+    public Employee(String name, String last_name, String email, String job_title, String phone, String image_url, String employee_code) {
         this.name = name;
         this.lastName = last_name;
         this.email = email;
@@ -36,14 +35,6 @@ public class Employee implements Serializable {
         this.phone = phone;
         this.imageUrl = image_url;
         this.employeeCode = employee_code;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getName() {
