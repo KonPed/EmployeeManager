@@ -7,21 +7,21 @@ import java.io.Serializable;
 public class Employee implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false, updatable = false)
+    @Column(name = "id", nullable = false, updatable = false)
     private Long id;
-    @Column
+    @Column(name = "name")
     private String name;
-    @Column
+    @Column(name = "last_name")
     private String last_name;
-    @Column(nullable = false, unique = true)
+    @Column(name = "email", nullable = false, unique = true)
     private String email;
-    @Column
+    @Column(name = "job_title")
     private String job_title;
-    @Column(unique = true)
+    @Column(name = "phone", unique = true)
     private String phone;
-    @Column
+    @Column(name = "image_url")
     private String image_url;
-    @Column
+    @Column(name = "employee_code")
     private String employee_code;
 
     public Employee() {
