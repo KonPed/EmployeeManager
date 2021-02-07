@@ -3,7 +3,7 @@ package com.example.testProject.model;
 import javax.persistence.*;
 import java.io.Serializable;
 
-@Entity(name = "EMPLOYEES")
+@Entity(name = "Employees_manager_employee")
 public class Employee implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,17 +12,17 @@ public class Employee implements Serializable {
     @Column(name = "name")
     private String name;
     @Column(name = "last_name")
-    private String last_name;
+    private String lastName;
     @Column(name = "email", nullable = false, unique = true)
     private String email;
     @Column(name = "job_title")
-    private String job_title;
+    private String jobTitle;
     @Column(name = "phone", unique = true)
     private String phone;
     @Column(name = "image_url")
-    private String image_url;
+    private String imageUrl;
     @Column(name = "employee_code")
-    private String employee_code;
+    private String employeeCode;
 
     public Employee() {
     }
@@ -30,12 +30,12 @@ public class Employee implements Serializable {
     public Employee(Long id, String name, String last_name, String email, String job_title, String phone, String image_url, String employee_code) {
         this.id = id;
         this.name = name;
-        this.last_name = last_name;
+        this.lastName = last_name;
         this.email = email;
-        this.job_title = job_title;
+        this.jobTitle = job_title;
         this.phone = phone;
-        this.image_url = image_url;
-        this.employee_code = employee_code;
+        this.imageUrl = image_url;
+        this.employeeCode = employee_code;
     }
 
     public Long getId() {
@@ -54,12 +54,12 @@ public class Employee implements Serializable {
         this.name = name;
     }
 
-    public String getLast_name() {
-        return last_name;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
+    public void setLastName(String last_name) {
+        this.lastName = last_name;
     }
 
     public String getEmail() {
@@ -70,12 +70,12 @@ public class Employee implements Serializable {
         this.email = email;
     }
 
-    public String getJob_title() {
-        return job_title;
+    public String getJobTitle() {
+        return jobTitle;
     }
 
-    public void setJob_title(String job_title) {
-        this.job_title = job_title;
+    public void setJobTitle(String job_title) {
+        this.jobTitle = job_title;
     }
 
     public String getPhone() {
@@ -86,20 +86,20 @@ public class Employee implements Serializable {
         this.phone = phone;
     }
 
-    public String getImage_url() {
-        return image_url;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public void setImage_url(String image_url) {
-        this.image_url = image_url;
+    public void setImageUrl(String image_url) {
+        this.imageUrl = image_url;
     }
 
-    public String getEmployee_code() {
-        return employee_code;
+    public String getEmployeeCode() {
+        return employeeCode;
     }
 
-    public void setEmployee_code(String employee_code) {
-        this.employee_code = employee_code;
+    public void setEmployeeCode(String employee_code) {
+        this.employeeCode = employee_code;
     }
 
     @Override
@@ -107,12 +107,12 @@ public class Employee implements Serializable {
         return "Employee{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", last_name='" + last_name + '\'' +
+                ", last_name='" + lastName + '\'' +
                 ", email='" + email + '\'' +
-                ", job_title='" + job_title + '\'' +
+                ", job_title='" + jobTitle + '\'' +
                 ", phone='" + phone + '\'' +
-                ", image_url='" + image_url + '\'' +
-                ", employee_code='" + employee_code + '\'' +
+                ", image_url='" + imageUrl + '\'' +
+                ", employee_code='" + employeeCode + '\'' +
                 '}';
     }
 }
