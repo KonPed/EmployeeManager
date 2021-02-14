@@ -1,10 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {HttpClientModule} from "@angular/common/http";
-import { EmployeeCardComponent } from './employee-card/employee-card.component';
+import { MdbModule } from 'mdb-angular-ui-kit';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {EmployeeCardComponent} from './employee-card/employee-card.component';
+import {EmployeeService} from './services/employee.service';
+import {WebService} from './services/web.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -13,10 +16,11 @@ import { EmployeeCardComponent } from './employee-card/employee-card.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    MdbModule,
+    BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [WebService, EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

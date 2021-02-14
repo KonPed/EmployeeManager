@@ -10,13 +10,16 @@
 <body>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="container">
-  <app-employee-card *ngFor="let employee of employees"
-                     [employeeName]="employee.name"
-                     [employeeLastName]="employee.lastName"
-                     [employeeEmail]="employee.email"
-                     [employeeJobTitle]="employee.jobTitle"
-                     [employeeTelephone]="employee.phone">
-  </app-employee-card>
+  <div class="row">
+    <div class="col-3" *ngFor="let employee of employees$ | async">
+      <app-employee-card [employeeName]="employee.name"
+                         [employeeLastName]="employee.lastName"
+                         [employeeJobTitle]="employee.jobTitle"
+                         [employeeEmail]="employee.email"
+                         [employeeTelephone]="employee.phone">
+      </app-employee-card>
+    </div>
+  </div>
 </div>
 </body>
 </html>

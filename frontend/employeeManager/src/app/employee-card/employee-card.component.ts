@@ -3,20 +3,20 @@ import {Component, Input, OnInit} from '@angular/core';
 @Component({
   selector: 'app-employee-card',
   templateUrl: './employee-card.component.html',
-  styleUrls: ['./employee-card.component.css']
+  styleUrls: ['./employee-card.component.scss']
 })
 export class EmployeeCardComponent implements OnInit {
 
   @Input()
-  employeeName: string = '';
+  employeeName: string;
   @Input()
-  employeeLastName: string = '';
+  employeeLastName: string;
   @Input()
-  employeeTelephone: string = '';
+  employeeTelephone: string;
   @Input()
-  employeeJobTitle: string = '';
+  employeeJobTitle: string;
   @Input()
-  employeeEmail: string = '';
+  employeeEmail: string;
 
   constructor() { }
 
