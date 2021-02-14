@@ -1,4 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {MDBModalRef, MDBModalService} from "angular-bootstrap-md";
+import {ModalComponent} from "../utilities/modal/modal.component";
+import {Employee} from "../model/employee";
 
 @Component({
   selector: 'app-employee-card',
@@ -7,26 +10,37 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class EmployeeCardComponent implements OnInit {
 
-  @Input()
-  employeeName: string;
-  @Input()
-  employeeLastName: string;
-  @Input()
-  employeeTelephone: string;
-  @Input()
-  employeeJobTitle: string;
-  @Input()
-  employeeEmail: string;
+  modalOptions: any;
 
-  constructor() {
-    this.employeeName = '';
-    this.employeeLastName = '';
-    this.employeeTelephone = '';
-    this.employeeJobTitle = '';
-    this.employeeEmail = '';
+  @Input() employee!: Employee;
+  // modalOptions = {
+  //   data: {
+  //     content: this.employee,
+  //     heading: "Edit"
+  //   }
+  // };
+
+  constructor(private mdbModalService: MDBModalService) {
   }
 
   ngOnInit(): void {
+  }
+
+  openModal(employee: Employee, mode: string): void {
+    this.modalOptions = {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: false,
+      class: '',
+      containerClass: '',
+      animated: true,
+      data: {
+        content: { heading: mode, employee: employee}
+      }
+    }
+    this.mdbModalService.show(ModalComponent, this.modalOptions);
   }
 
 }

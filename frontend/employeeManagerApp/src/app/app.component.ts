@@ -11,7 +11,6 @@ import {Employee} from "./model/employee";
 })
 export class AppComponent {
   employees$: Observable<Employee[]> = new Observable<Employee[]>();
-  employeeName: string = '';
 
   constructor(private employeeService: EmployeeService) {
   }
