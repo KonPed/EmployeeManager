@@ -18,7 +18,13 @@ export class EmployeeCardComponent implements OnInit {
   @Input()
   employeeEmail: string;
 
-  constructor() { }
+  constructor() {
+    this.employeeName = '';
+    this.employeeLastName = '';
+    this.employeeTelephone = '';
+    this.employeeJobTitle = '';
+    this.employeeEmail = '';
+  }
 
   ngOnInit(): void {
   }
