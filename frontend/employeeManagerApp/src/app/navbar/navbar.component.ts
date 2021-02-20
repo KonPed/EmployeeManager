@@ -1,7 +1,8 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {EmployeeService} from "../services/employee.service";
 import {Employee} from "../model/employee";
-import {switchMap} from "rxjs/operators";
+import {ModalComponent} from "../utilities/modal/modal.component";
+import {MDBModalService} from "angular-bootstrap-md";
 
 @Component({
   selector: 'app-navbar',
@@ -10,25 +11,25 @@ import {switchMap} from "rxjs/operators";
 })
 export class NavbarComponent implements OnInit {
   employee: Employee = new Employee();
+  modalOptions: any;
 
-  @Output()
-  employeeAdded: EventEmitter<any> = new EventEmitter();
-  constructor(private employeeService: EmployeeService) { }
+  constructor(private employeeService: EmployeeService, private mdbModalService: MDBModalService) { }
 
   ngOnInit(): void {
   }
 
-  onSubmit(employeeDetails: Employee) {
-    this.employee.name = employeeDetails.name;
-    this.employee.lastName = employeeDetails.lastName;
-    this.employee.jobTitle = employeeDetails.jobTitle;
-    this.employee.email = employeeDetails.email;
-    this.employee.phone = employeeDetails.phone;
-    this.employee.password = employeeDetails.password;
-    console.log(employeeDetails);
-    this.employeeService.addEmployee(this.employee).subscribe(() => {
-      this.employeeAdded.emit();
-    });
+  openModal(mode: string, employee?: Employee): void {
+    this.modalOptions = {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: false,
+      ignoreBackdropClick: false,
+      class: '',
+      containerClass: 'left',
+      animated: true,
+    }
+    this.mdbModalService.show(ModalComponent, this.modalOptions);
   }
 
 }
