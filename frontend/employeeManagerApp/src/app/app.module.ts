@@ -7,12 +7,14 @@ import {MDBBootstrapModule, MDBModalRef} from "angular-bootstrap-md";
 import {EmployeeCardComponent} from "./employee-card/employee-card.component";
 import {HttpClientModule} from "@angular/common/http";
 import { ModalComponent } from './utilities/modal/modal.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeCardComponent,
-    ModalComponent
+    ModalComponent,
+    NavbarComponent
   ],
   imports: [
     MDBBootstrapModule.forRoot(),

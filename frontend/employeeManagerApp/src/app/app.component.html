@@ -9,11 +9,11 @@
 </head>
 <body>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<app-navbar></app-navbar>
 <div class="container">
   <div class="row">
     <div class="col-4" *ngFor="let employee of employees$ | async">
-      <app-employee-card [employee]="employee">
-      </app-employee-card>
+      <app-employee-card [employee]="employee"></app-employee-card>
     </div>
   </div>
 </div>
