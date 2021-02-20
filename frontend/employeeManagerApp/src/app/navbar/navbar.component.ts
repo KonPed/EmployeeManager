@@ -12,4 +12,8 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSubmit(employeeDetails: Object) {
+    console.log(employeeDetails);
+  }
+
 }

@@ -7,7 +7,7 @@
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link waves-light" mdbWavesEffect>Add Employee<span class="sr-only">(current)</span></a>
+        <a class="nav-link waves-light" mdbWavesEffect (click)="frame.show()">Add Employee<span class="sr-only">(current)</span></a>
       </li>
     </ul>
     <!-- Links -->
@@ -16,3 +16,60 @@
 
 </mdb-navbar>
 <!--/.Navbar-->
+
+<div mdbModal #frame="mdbModal" class="modal fade left" id="frameModalTop" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Add Employee</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form (ngSubmit)="onSubmit(employeeForm.value)" #employeeForm="ngForm">
+        <div class="modal-body mx-3">
+          <div class="md-form mb-5">
+            <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
+            <input ngModel name="employeeName" type="text" id="addEmployee_name" class="form-control" mdbInput mdbValidate>
+            <label for="addEmployee_name">Name</label>
+          </div>
+
+          <div class="md-form mb-5">
+            <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
+            <input ngModel name="employeeLastName" type="text" id="addEmployee_last_name" class="form-control" mdbInput mdbValidate>
+            <label for="addEmployee_last_name">Last Name</label>
+          </div>
+
+          <div class="md-form mb-5">
+            <mdb-icon fas icon="user-md" class="prefix grey-text"></mdb-icon>
+            <input ngModel name="employeeJob" type="text" id="addEmployee_job" class="form-control" mdbInput mdbValidate>
+            <label for="addEmployee_job">Job Title</label>
+          </div>
+
+          <div class="md-form mb-5">
+            <mdb-icon fas icon="envelope" class="prefix grey-text"></mdb-icon>
+            <input ngModel name="email" type="email" id="addEmployee_email" class="form-control" mdbInput mdbValidate>
+            <label for="addEmployee_email">Your email</label>
+          </div>
+
+          <div class="md-form mb-5">
+            <mdb-icon fas icon="phone" class="prefix grey-text"></mdb-icon>
+            <input ngModel name="phone" type="tel" id="addEmployee_phone" class="form-control" mdbInput mdbValidate>
+            <label for="addEmployee_phone">Phone Number</label>
+          </div>
+
+          <div class="md-form mb-5">
+            <mdb-icon fas icon="lock" class="prefix grey-text"></mdb-icon>
+            <input ngModel name="password" type="password" id="addEmployee_pass" class="form-control" mdbInput mdbValidate>
+            <label for="addEmployee_pass">Your password</label>
+          </div>
+
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <button type="submit" mdbBtn color="default" class="waves-light" mdbWavesEffect>Add</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

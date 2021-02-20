@@ -2,12 +2,12 @@
   <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
     <span aria-hidden="true">×</span>
   </button>
-  <h4 class="modal-title w-100" id="myModalLabel">{{content.heading}}</h4>
+  <h4 class="modal-title w-100" id="myModalLabel">{{content?.heading}}</h4>
 </div>
 <div class="modal-body">
   <div>
-    {{content.employee.name}} {{content.employee.lastName}}
-    <p>Job Title: {{content.employee.jobTitle}}</p>
+    {{content?.employee?.name}} {{content?.employee?.lastName}}
+    <p>Job Title: {{content?.employee?.jobTitle}}</p>
   </div>
 </div>
 <div class="modal-footer">
