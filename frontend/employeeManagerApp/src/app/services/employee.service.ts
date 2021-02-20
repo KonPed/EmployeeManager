@@ -10,8 +10,22 @@ export class EmployeeService {
 
   constructor(private webService: WebService) { }
 
+  /**
+   * GET
+   * getAllEmployees
+   * return a list of all Employees.
+   */
   public getAllEmployees(): Observable<Employee[]> {
     return this.webService.get('/employee/all');
+  }
+
+  /**
+   * POST
+   * addEmployee
+   * Add a new Employee in the database.
+   */
+  public addEmployee(employee: Employee) {
+    return this.webService.post('/employee/add', employee);
   }
 
 }
