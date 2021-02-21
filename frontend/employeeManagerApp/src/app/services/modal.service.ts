@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Subject} from "rxjs";
+import {Observable, Subject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,11 +11,11 @@ export class ModalService {
 
   constructor() { }
 
-  public employeeAdded() {
+  public employeeAdded(): void {
     return this.employeeAdded$.next();
   }
 
-  public employeeDeleted() {
+  public employeeDeleted(): void {
     return this.employeeDeleted$.next();
   }
 }

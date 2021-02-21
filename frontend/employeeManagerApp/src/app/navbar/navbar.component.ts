@@ -1,8 +1,8 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {EmployeeService} from "../services/employee.service";
-import {Employee} from "../model/employee";
-import {ModalComponent} from "../utilities/modal/modal.component";
-import {MDBModalService} from "angular-bootstrap-md";
+import {EmployeeService} from '../services/employee.service';
+import {Employee} from '../model/employee';
+import {ModalComponent} from '../utilities/modal/modal.component';
+import {MDBModalService} from 'angular-bootstrap-md';
 
 @Component({
   selector: 'app-navbar',
@@ -31,7 +31,7 @@ export class NavbarComponent implements OnInit {
       data: {
         content: {heading: mode}
       }
-    }
+    };
     this.mdbModalService.show(ModalComponent, this.modalOptions);
   }
 

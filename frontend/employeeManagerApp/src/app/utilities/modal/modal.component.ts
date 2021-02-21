@@ -1,9 +1,9 @@
 import {Component, EventEmitter, Output} from '@angular/core';
-import {MDBModalRef} from "angular-bootstrap-md";
-import {Employee} from "../../model/employee";
-import {Subject} from "rxjs";
-import {EmployeeService} from "../../services/employee.service";
-import {ModalService} from "../../services/modal.service";
+import {MDBModalRef} from 'angular-bootstrap-md';
+import {Employee} from '../../model/employee';
+import {Subject} from 'rxjs';
+import {EmployeeService} from '../../services/employee.service';
+import {ModalService} from '../../services/modal.service';
 
 @Component({
   selector: 'app-modal',
@@ -20,7 +20,7 @@ export class ModalComponent {
 
   constructor(public modalRef: MDBModalRef, private employeeService: EmployeeService, private modalService: ModalService) { }
 
-  onSubmit(employeeDetails: Employee) {
+  onSubmit(employeeDetails: Employee): void {
     this.employee.id = Number(employeeDetails.id);
     this.employee.name = employeeDetails.name;
     this.employee.lastName = employeeDetails.lastName;

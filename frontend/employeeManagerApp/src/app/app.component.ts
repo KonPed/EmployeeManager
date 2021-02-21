@@ -1,9 +1,9 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
 
-import {Observable} from "rxjs";
-import {EmployeeService} from "./services/employee.service";
-import {Employee} from "./model/employee";
-import {ModalService} from "./services/modal.service";
+import {Observable} from 'rxjs';
+import {EmployeeService} from './services/employee.service';
+import {Employee} from './model/employee';
+import {ModalService} from './services/modal.service';
 
 @Component({
   selector: 'app-root',

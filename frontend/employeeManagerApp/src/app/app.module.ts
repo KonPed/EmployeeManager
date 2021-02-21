@@ -3,12 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {MDBBootstrapModule, MDBModalRef} from "angular-bootstrap-md";
-import {EmployeeCardComponent} from "./employee-card/employee-card.component";
-import {HttpClientModule} from "@angular/common/http";
+import {MDBBootstrapModule, MDBModalRef} from 'angular-bootstrap-md';
+import {EmployeeCardComponent} from './employee-card/employee-card.component';
+import {HttpClientModule} from '@angular/common/http';
 import { ModalComponent } from './utilities/modal/modal.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [

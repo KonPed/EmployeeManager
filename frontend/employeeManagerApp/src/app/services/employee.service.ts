@@ -25,7 +25,7 @@ export class EmployeeService {
    * @param employee
    * Add a new Employee in the database.
    */
-  public addEmployee(employee: Employee) {
+  public addEmployee(employee: Employee): Observable<Employee> {
     return this.webService.post('/employee/add', employee);
   }
 
@@ -35,7 +35,7 @@ export class EmployeeService {
    * @param employee
    * Delete an existing employee from the database.
    */
-  public deleteEmployee(employee: Employee) {
+  public deleteEmployee(employee: Employee): Observable<Employee> {
     return this.webService.delete(`/employee/delete/${employee.id}`);
   }
 

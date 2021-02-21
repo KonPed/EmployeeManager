@@ -1,9 +1,9 @@
 import {AfterViewInit, Component, Input, OnInit, ViewChild} from '@angular/core';
-import {MDBModalRef, MDBModalService} from "angular-bootstrap-md";
-import {ModalComponent} from "../utilities/modal/modal.component";
-import {Employee} from "../model/employee";
-import {EmployeeService} from "../services/employee.service";
-import {ModalService} from "../services/modal.service";
+import {MDBModalRef, MDBModalService} from 'angular-bootstrap-md';
+import {ModalComponent} from '../utilities/modal/modal.component';
+import {Employee} from '../model/employee';
+import {EmployeeService} from '../services/employee.service';
+import {ModalService} from '../services/modal.service';
 
 @Component({
   selector: 'app-employee-card',
@@ -36,11 +36,11 @@ export class EmployeeCardComponent implements OnInit {
       data: {
         content: { heading: mode, employee: this.employee}
       }
-    }
+    };
     this.mdbModalService.show(ModalComponent, this.modalOptions);
   }
 
-  deleteEmployee() {
+  deleteEmployee(): void {
     this.employeeService.deleteEmployee(this.employee).subscribe(() => {
       this.modalService.employeeDeleted();
     });
