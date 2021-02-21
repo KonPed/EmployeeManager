@@ -30,4 +30,10 @@ public class EmployeeController {
     public Employee addEmployee(@RequestBody Employee employee) {
         return employeeService.addEmployee(employee);
     }
+
+    @DeleteMapping(value = "delete/{id}", produces = "application/json")
+    public void deleteEmployee(@PathVariable() Long id) {
+        System.out.println(id);
+        employeeService.deleteEmployee(id);
+    }
 }

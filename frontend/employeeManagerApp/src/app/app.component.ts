@@ -21,6 +21,9 @@ export class AppComponent implements OnInit {
     this.modalService.employeeAdded$.subscribe(() => {
       this.employees$ = this.employeeService.getAllEmployees();
     });
+    this.modalService.employeeDeleted$.subscribe(() => {
+      this.employees$ = this.employeeService.getAllEmployees();
+    });
   }
 
 }

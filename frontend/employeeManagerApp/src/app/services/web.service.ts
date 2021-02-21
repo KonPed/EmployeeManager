@@ -18,4 +18,8 @@ export class WebService {
   public post(url: string, obj: any): Observable<Employee> {
     return this.http.post<any>(`${environment.apiUrl}${url}`, obj);
   }
+
+  public delete(url: string): Observable<Employee> {
+    return this.http.delete<any>(`${environment.apiUrl}${url}`);
+  }
 }

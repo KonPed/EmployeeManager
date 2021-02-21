@@ -22,10 +22,21 @@ export class EmployeeService {
   /**
    * POST
    * addEmployee
+   * @param employee
    * Add a new Employee in the database.
    */
   public addEmployee(employee: Employee) {
     return this.webService.post('/employee/add', employee);
+  }
+
+  /**
+   * POST
+   * deleteEmployee
+   * @param employee
+   * Delete an existing employee from the database.
+   */
+  public deleteEmployee(employee: Employee) {
+    return this.webService.delete(`/employee/delete/${employee.id}`);
   }
 
 }

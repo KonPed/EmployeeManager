@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface EmployeeService {
     Employee addEmployee(Employee employee);
+    void deleteEmployee(Long id);
     List<Employee> findAllEmployees();
     Employee findEmployeeByName(String employeeName) throws UserNotFoundException;
 }
