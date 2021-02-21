@@ -28,6 +28,9 @@ export class NavbarComponent implements OnInit {
       class: '',
       containerClass: 'left',
       animated: true,
+      data: {
+        content: {heading: mode}
+      }
     }
     this.mdbModalService.show(ModalComponent, this.modalOptions);
   }

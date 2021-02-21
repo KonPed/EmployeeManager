@@ -1,5 +1,5 @@
 <div class="modal-header text-center">
-  <h4 class="modal-title w-100 font-weight-bold">Add Employee</h4>
+  <h4 class="modal-title w-100 font-weight-bold">{{content.heading}} Employee</h4>
   <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="modalRef.hide()">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -8,6 +8,8 @@
   <div class="modal-body mx-3">
     <div class="md-form mb-5">
       <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
+      <label for="employeeId" hidden></label>
+      <input id="employeeId" type="text" hidden ngModel="{{content?.employee?.id}}" name="id">
       <input ngModel="{{content?.employee?.name}}" name="name" type="text" id="addEmployee_name" class="form-control" mdbInput>
       <label for="addEmployee_name">Name</label>
       <!--          <mdb-error-->

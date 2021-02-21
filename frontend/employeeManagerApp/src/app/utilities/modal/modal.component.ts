@@ -21,13 +21,13 @@ export class ModalComponent {
   constructor(public modalRef: MDBModalRef, private employeeService: EmployeeService, private modalService: ModalService) { }
 
   onSubmit(employeeDetails: Employee) {
+    this.employee.id = Number(employeeDetails.id);
     this.employee.name = employeeDetails.name;
     this.employee.lastName = employeeDetails.lastName;
     this.employee.jobTitle = employeeDetails.jobTitle;
     this.employee.email = employeeDetails.email;
     this.employee.phone = employeeDetails.phone;
     this.employee.password = employeeDetails.password;
-    console.log(employeeDetails);
     this.employeeService.addEmployee(this.employee).subscribe(() => {
       this.modalService.employeeAdded();
       this.modalRef.hide();
